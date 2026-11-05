@@ -49,7 +49,7 @@
 									<h2><a href="second-entry.html">Most Recent Entry!!</a></h2>
 									<p>My Life Lately</p>
 								</header>
-								<a href="second-entry.html" class="image main"><img src="images/SecondEntry/diva.jpeg" alt="" /></a>
+								<a href="second-entry.html" class="image main"><img src="images/SecondEntry/cover.jpeg" alt="" /></a>
 								<ul class="actions special">
 									<li><a href="second-entry.html" class="button large">Full Story</a></li>
 								</ul>
@@ -77,23 +77,86 @@
 									<a href="#" class="page active">1</a>
 								</div>
 							</footer>
+																				<section>
+							<h2>Subscribe to get updates!</h2>
+							<form id="subscriber-form">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" required />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" required />
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Submit!!" id="submit-btn" /></li>
+								</ul>
+								<div id="form-response" style="margin-top: 15px; font-weight: bold; display: none;"></div>
+							</form>
+						</section>
 
-					</div>
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>Life with Ash</li></ul>
-					</div>
+				</div>
+			<!-- Copyright -->
+				<div id="copyright">
+					<ul><li>Life with Ash</li></ul>
+				</div>
 
-			</div>
+		</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			document.getElementById('subscriber-form').addEventListener('submit', function(e) {
+				e.preventDefault(); 
+				
+				const submitBtn = document.getElementById('submit-btn');
+				const responseDiv = document.getElementById('form-response');
+				const form = this;
 
-	</body>
+				submitBtn.value = "Sending...";
+				submitBtn.disabled = true;
+
+				const dataObject = {
+					name: document.getElementById('name').value,
+					email: document.getElementById('email').value
+				};
+
+				// Your deployment URL configured to bypass the 403 preflight lockouts
+				const targetScriptUrl = "https://script.google.com/macros/s/AKfycbzpXaO33ITeM61DCkLa-I6ChRSNgxnlh8G0gNYaGuThLjj9TRLRFTZc1jUYtIx9iW45/exec";
+
+				fetch(targetScriptUrl, { 
+					method: 'POST',
+					mode: 'no-cors', 
+					headers: {
+						'Content-Type': 'text/plain;charset=utf-8' 
+					},
+					body: JSON.stringify(dataObject)
+				})
+				.then(() => {
+					responseDiv.style.color = "#ff66bf";
+					responseDiv.innerText = "Thanks for joining diva!! Have a good day <3 😋";
+					responseDiv.style.display = "block";
+					form.reset();
+				})
+				.catch(error => {
+					responseDiv.style.color = "#ff66bf";
+					responseDiv.innerText = "Oopsie daisy!! Something went weird. Please try again baddie.";
+					responseDiv.style.display = "block";
+				})
+				.finally(() => {
+					submitBtn.value = "Submit!!";
+					submitBtn.disabled = false;
+				});
+			});
+		</script>
+
+</body>
 </html>
