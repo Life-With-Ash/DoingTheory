@@ -3744,6 +3744,11 @@ input, select, textarea {
 
 /* Main */
 
+	#main p a, #main li a {
+  	 	 color: #fd0176; 
+  		  border-bottom-color: #fd0176; 
+		}
+	
 	#main {
 		background-color: #ffffff;
 		position: relative;
@@ -3752,11 +3757,6 @@ input, select, textarea {
 		max-width: 72rem;
 		z-index: 2;
 	}
-	
-		#main p a, #main li a {
-  	 	 color: #fd0176; 
-  		  border-bottom-color: #fd0176; 
-		}
 
 		#main > * {
 			padding: 4rem 4rem 2rem 4rem ;
