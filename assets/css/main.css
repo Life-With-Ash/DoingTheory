@@ -3752,6 +3752,11 @@ input, select, textarea {
 		max-width: 72rem;
 		z-index: 2;
 	}
+	
+		#main p a, #main li a {
+  	 	 color: #fd0176; /* Change this hex code to your desired link color */
+  		  border-bottom-color: rgba(0, 102, 204, 0.5); /* Optional: matches the dotted underline to your new color */
+		}
 
 		#main > * {
 			padding: 4rem 4rem 2rem 4rem ;
