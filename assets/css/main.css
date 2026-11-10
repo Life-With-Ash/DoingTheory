@@ -298,7 +298,7 @@ input, select, textarea {
 		border-bottom-color: rgba(33, 41, 49, 0.5);
 	}
 
-	p a, li a {
+	p a, p li a {
   	 	 color: #fd0176; 
   		  border-bottom-color: #fd0176; 
 		}
