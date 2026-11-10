@@ -298,10 +298,15 @@ input, select, textarea {
 		border-bottom-color: rgba(33, 41, 49, 0.5);
 	}
 
-	p a, p li a {
+	p a, li a{
   	 	 color: #fd0176; 
   		  border-bottom-color: #fd0176; 
 		}
+	
+	nav a {
+		color: #431f05;
+		border-bottom-color: rgba(33, 41, 49, 0.5);
+	}
 
 		a:hover {
 			border-bottom-color: transparent;
