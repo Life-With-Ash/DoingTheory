@@ -298,6 +298,11 @@ input, select, textarea {
 		border-bottom-color: rgba(33, 41, 49, 0.5);
 	}
 
+	p a, li a {
+  	 	 color: #fd0176; 
+  		  border-bottom-color: #fd0176; 
+		}
+
 		a:hover {
 			border-bottom-color: transparent;
 			color: #ffd900 !important;
@@ -4686,8 +4691,3 @@ input, select, textarea {
     margin-bottom: 3rem;
     overflow: hidden; /* Clears floating images so they don't leak into the next section */
 }
-
-#main p a, #main li a {
-  	 	 color: #fd0176; 
-  		  border-bottom-color: #fd0176; 
-		}
