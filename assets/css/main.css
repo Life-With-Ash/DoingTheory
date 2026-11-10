@@ -3754,8 +3754,8 @@ input, select, textarea {
 	}
 	
 		#main p a, #main li a {
-  	 	 color: #fd0176; /* Change this hex code to your desired link color */
-  		  border-bottom-color: #fd0176; /* Optional: matches the dotted underline to your new color */
+  	 	 color: #fd0176; 
+  		  border-bottom-color: #fd0176; 
 		}
 
 		#main > * {
