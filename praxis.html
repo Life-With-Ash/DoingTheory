@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+//built with the Massively template from HTML5 UP as a base, will continue to evolve as I learn more html
+<html>
+	<head>
+		<title>Doing Theory</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Doing Theory</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="motivations.html">Motivations</a></li>
+							<li><a href="life-with-ash-nav.html">Life With Ash</a></li>
+							<li><a href="things-lately.html">Things I've Liked Lately</a></li>
+							<li><a href="praxis.html">Praxis</a></li>
+						</ul>
+					</nav>
+                    
+				<!-- Main -->
+					<div id="main">
+                        <header class="major">
+                            <h1>Praxis</h1>
+                        </header>
+                        <body>
+                            <div style="margin-bottom: 0; overflow: hidden; clear: both;">
+                            <h2>The act of Praxis is cyclical:</h2>
+			                	<p><span class="image left"><img src="images/FlowChartPraxis.png" alt="" /></span>
+                                  You can start at any point within the cycle and follow it through to the next step: (Made using Mermaid Flowchart editor and GIMP)
+                                    <br>
+                                    <b>Theory</b> - By observing the world and your experiences, you hypothesize an explanation focusing on systemic privilege and inequities.
+                                    <br>
+                                    <b>Application</b> - You take your hypothesis and apply it in an attempt to break the systemic issues you observed.
+                                    <br>
+                                    <b>Learning</b> - You learn from the results of your actions, informing new theory.
+                              </p>
+			                </div>
+                            <blockquote>
+                                <p>“Making this theory is the challenge before us. For in its production lies the hope of our liberation, in its production lies the possibility of naming all our pain&mdash;of making all our hurt go away. If we create feminist theory, feminist movements that address this pain, we will have no difficulty building a mass-based feminist resistance struggle. There will be no gap between feminist theory and feminist practice.” - <b>Bell Hooks, 1991, Theory as Liberatory Practice</b></p>
+                            </blockquote>
+
+                            <div>
+                                <h2>Articles to come...</h2>
+                            </div>
+                        </body>
+
+						<!-- Featured Post 
+                            
+                            <article class="post featured">
+								<header class="major">
+									<span class="date">November 4, 2026</span>
+									<h2><a href="LifeWithAshEntries/second-entry.html">Most Recent Entry!!</a></h2>
+									<p>My Life Lately</p>
+								</header>
+								<a href="LifeWithAshEntries/second-entry.html" class="image main"><img src="images/SecondEntry/cover.jpeg" alt="" /></a>
+								<ul class="actions special">
+									<li><a href="second-entry.html" class="button large">Full Story</a></li>
+								</ul>
+							</article>
+
+                            Posts 
+							<section class="posts">
+								<article>
+									<header>
+										<span class="date">Aug 30 - Sept 5, 2026</span>
+										<h2><a href="first-entry.html">friends and zoos!!</a></h2>
+									</header>
+									<a href="first-entry.html" class="image fit"><img src="images/FirstEntry/zoo-pic.jpeg" alt="" /></a>
+									<p>Read about the beginning of my first semester here at THE Ohio State University, and learn a little about my new friends!</p>
+									<ul class="actions special">
+										<li><a href="first-entry.html" class="button">Full Story</a></li>
+									</ul>
+								</article>
+							</section>
+                            -->
+
+
+				</div>
+			<!-- Copyright -->
+				<div id="copyright">
+					<ul><li>Doing Theory</li></ul>
+				</div>
+
+		</div>
+
+	<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			document.getElementById('subscriber-form').addEventListener('submit', function(e) {
+				e.preventDefault(); 
+				
+				const submitBtn = document.getElementById('submit-btn');
+				const responseDiv = document.getElementById('form-response');
+				const form = this;
+
+				submitBtn.value = "Sending...";
+				submitBtn.disabled = true;
+
+				const dataObject = {
+					name: document.getElementById('name').value,
+					email: document.getElementById('email').value
+				};
+
+				// Your deployment URL configured to bypass the 403 preflight lockouts
+				const targetScriptUrl = "https://script.google.com/macros/s/AKfycbzpXaO33ITeM61DCkLa-I6ChRSNgxnlh8G0gNYaGuThLjj9TRLRFTZc1jUYtIx9iW45/exec";
+
+				fetch(targetScriptUrl, { 
+					method: 'POST',
+					mode: 'no-cors', 
+					headers: {
+						'Content-Type': 'text/plain;charset=utf-8' 
+					},
+					body: JSON.stringify(dataObject)
+				})
+				.then(() => {
+					responseDiv.style.color = "#ff66bf";
+					responseDiv.innerText = "Thanks for joining diva!! Have a good day <3 😋";
+					responseDiv.style.display = "block";
+					form.reset();
+				})
+				.catch(error => {
+					responseDiv.style.color = "#ff66bf";
+					responseDiv.innerText = "Oopsie daisy!! Something went weird. Please try again baddie.";
+					responseDiv.style.display = "block";
+				})
+				.finally(() => {
+					submitBtn.value = "Submit!!";
+					submitBtn.disabled = false;
+				});
+			});
+		</script>
+
+</body>
+</html>
